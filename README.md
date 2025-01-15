@@ -172,17 +172,29 @@ It will show up in your browser as shown below:
 
 | Use Case | Scenario | Implementation | Example Code |
 |----------|----------|----------------|--------------|
-| **1. Custom Watch Face Design Studios** | Design studios creating custom watch faces for different smart watch brands | • Multiple style templates<br>• Brand-specific customizations<br>• Bulk generation capability<br>• Style consistency checks |Some code here:<br><pre lang="python"># Example: Bulk Generation
-styles = ["Business", "Fitness", "Medical"]
-for style in styles:
-    metrics = get_style_metrics(style)
-    generate_watch_face(style, metrics)</pre> |
+| **1. Custom Watch Face Design Studios** | Design studios creating custom watch faces for different smart watch brands | • Multiple style templates<br>• Brand-specific customizations<br>• Bulk generation capability<br>• Style consistency checks |[code-hello](#code-hello) |
 | **2. Healthcare Monitoring** | Medical facilities requiring specialized watch faces for patient monitoring | • Health metric prioritization<br>• Emergency alert displays<br>• Medical data integration<br>• Compliance with health standards | ```python<br># Medical Watch Face<br>medical_metrics = [<br>    "Heart Rate",<br>    "Blood Oxygen",<br>    "ECG",<br>    "Medication Alerts"<br>]<br>generate_watch_face("Medical", medical_metrics)``` |
 | **3. Industrial Applications** | Manufacturing plants needing watch faces for worker safety and monitoring | • Environmental sensor displays<br>• Safety alert integration<br>• Machine status monitoring<br>• Quick response triggers | ```python<br># Industrial Watch Face<br>industrial_metrics = [<br>    "Temperature",<br>    "Humidity",<br>    "Gas Levels",<br>    "Emergency Alerts"<br>]<br>generate_watch_face("Industrial", industrial_metrics)``` |
 | **4. Fitness and Sports** | Fitness centers and sports teams requiring specialized activity tracking | • Performance metrics display<br>• Workout tracking<br>• Team coordination<br>• Competition modes | ```python<br># Fitness Watch Face<br>fitness_metrics = [<br>    "Heart Rate",<br>    "Steps",<br>    "Distance",<br>    "Calories"<br>]<br>generate_watch_face("Fitness", fitness_metrics)``` |
 | **5. Corporate Branding** | Companies wanting branded watch faces for employee smart watches | • Brand color integration<br>• Logo placement<br>• Corporate event reminders<br>• Team coordination features | ```python<br># Corporate Watch Face<br>corporate_metrics = [<br>    "Time",<br>    "Meetings",<br>    "Team Updates",<br>    "Goals"<br>]<br>generate_watch_face("Business", corporate_metrics)``` |
 | **6. Educational Institutions** | Schools using smart watches for student scheduling and activities | • Class schedule display<br>• Assignment reminders<br>• Emergency notifications<br>• Parent communication | ```python<br># Educational Watch Face<br>education_metrics = [<br>    "Schedule",<br>    "Assignments",<br>    "Alerts",<br>    "Activities"<br>]<br>generate_watch_face("Cartoon", education_metrics)``` |
 
+### Code
+
+<details id="code-hello" open>
+<summary >code-hello</summary>
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+```
+
+</details>
   
 ## 1. Custom Watch Face Design Studios
 ```
