@@ -93,7 +93,7 @@ Output for Cartoon Watch Face Style:
 ![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/cartoon.png)
 
 Output for Business Watch Face Style:
-![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/business.png)
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/businesses.png)
 
 Output for Fitness Watch Face Style:
 ![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/fitness.png)
