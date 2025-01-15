@@ -67,14 +67,14 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 ### Frontend Technologies
 
 ```
-- **Streamlit (v1.31.0+)**
+- Streamlit (v1.31.0+)
   - Python-based web framework
   - Interactive UI components
   - Real-time updates
   - Session state management
   - File upload/download handling
 
-- **Python Libraries**
+- Python Libraries
   - `requests`: HTTP requests handling
   - `Pillow (PIL)`: Image processing
   - `base64`: Image encoding/decoding
