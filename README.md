@@ -1,11 +1,8 @@
-# aws-genai-smart-watch-face-generator
-This application can create smart watch face ideas for several themes, you can choose the style and display metric option to customize it.
 
 # AI Watch Face Generator
 
 An AI-powered watch face generator that creates custom watch faces using Stable Diffusion through Amazon Bedrock.
 
-![Watch Face Generator Demo](docs/images/screenshot1.png)
 
 ## Features
 
@@ -37,3 +34,8 @@ graph LR
     D --> C
     C --> B
     B --> A
+
+
+## Demo
+
+![Watch Face Generator Demo](docs/images/screenshot1.png)
