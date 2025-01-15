@@ -1,0 +1,245 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CFN template for Watch Face Generator with API Gateway, Lambda, and Bedrock'
+
+Parameters:
+  StageName:
+    Type: String
+    Default: 'prod'
+    Description: API Gateway stage name
+
+Resources:
+  # IAM Role for Lambda
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: BedrockAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource: '*'
+
+  # Lambda Function
+  WatchFaceGeneratorFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: watch-face-generator
+      Runtime: python3.9
+      Handler: index.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          import base64
+
+          def get_stability_params(style):
+              params = {
+                  "Business": {
+                      "cfg_scale": 8,
+                      "steps": 50,
+                      "seed": 42
+                  },
+                  "Fitness": {
+                      "cfg_scale": 9,
+                      "steps": 50,
+                      "seed": 123
+                  },
+                  "Industrial": {
+                      "cfg_scale": 10,
+                      "steps": 50,
+                      "seed": 456
+                  },
+                  "Medical": {
+                      "cfg_scale": 7,
+                      "steps": 50,
+                      "seed": 789
+                  },
+                  "Cartoon": {
+                      "cfg_scale": 12,
+                      "steps": 55,
+                      "seed": 234
+                  },
+                  "Sky": {
+                      "cfg_scale": 9,
+                      "steps": 60,
+                      "seed": 567
+                  }
+              }
+              return params.get(style, params["Business"])
+
+          def create_prompt(style, metrics):
+              prompts = {
+                  "Business": "Create a minimal, elegant smart watch face with dark background, professional design, luxury watch style",
+                  "Fitness": "Design a sporty smart watch face with activity metrics, dynamic layout, vibrant colors",
+                  "Industrial": "Generate a robust industrial smart watch face with sensor displays, metallic texture, steampunk elements",
+                  "Medical": "Create a medical-focused smart watch face with health metrics, clean white interface, medical symbols",
+                  "Cartoon": "Design a playful cartoon smart watch face with cute animated characters, bright colors, fun elements, kawaii style, digital watch display",
+                  "Sky": "Create a smart watch face featuring beautiful sky scenery, cloud patterns, sun/moon phases, weather elements, gradient colors"
+              }
+              
+              style_details = {
+                  "Business": ", minimalist typography, executive style",
+                  "Fitness": ", performance tracking layout",
+                  "Industrial": ", industrial gauge designs, mechanical elements",
+                  "Medical": ", vital signs styling, medical dashboard",
+                  "Cartoon": ", Disney/Pixar inspired, animated elements",
+                  "Sky": ", atmospheric gradients, weather icons"
+              }
+              
+              base_prompt = prompts.get(style, prompts["Business"])
+              style_detail = style_details.get(style, "")
+              metrics_prompt = f" including displays for {', '.join(metrics)}"
+              return base_prompt + metrics_prompt + style_detail
+
+          def lambda_handler(event, context):
+              try:
+                  body = json.loads(event['body'])
+                  style = body['style']
+                  metrics = body['metrics']
+                  
+                  bedrock = boto3.client('bedrock-runtime')
+                  prompt = create_prompt(style, metrics)
+                  style_params = get_stability_params(style)
+                  
+                  response = bedrock.invoke_model(
+                      modelId='stability.stable-diffusion-xl',
+                      body=json.dumps({
+                          "text_prompts": [{"text": prompt}],
+                          "cfg_scale": style_params["cfg_scale"],
+                          "steps": style_params["steps"],
+                          "seed": style_params["seed"]
+                      })
+                  )
+                  
+                  response_body = json.loads(response['body'].read())
+                  image_data = response_body['artifacts'][0]['base64']
+                  
+                  return {
+                      'statusCode': 200,
+                      'headers': {
+                          'Access-Control-Allow-Origin': '*',
+                          'Access-Control-Allow-Headers': 'Content-Type',
+                          'Access-Control-Allow-Methods': 'OPTIONS,POST'
+                      },
+                      'body': json.dumps({
+                          'image': image_data
+                      })
+                  }
+              except Exception as e:
+                  return {
+                      'statusCode': 500,
+                      'headers': {
+                          'Access-Control-Allow-Origin': '*',
+                          'Access-Control-Allow-Headers': 'Content-Type',
+                          'Access-Control-Allow-Methods': 'OPTIONS,POST'
+                      },
+                      'body': json.dumps({
+                          'error': str(e)
+                      })
+                  }
+      Timeout: 30
+      MemorySize: 256
+
+  # API Gateway REST API
+  WatchFaceAPI:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: WatchFaceGeneratorAPI
+      Description: API for Watch Face Generator
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
+
+  # API Gateway Resource
+  APIResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId: !GetAtt WatchFaceAPI.RootResourceId
+      PathPart: 'generate'
+      RestApiId: !Ref WatchFaceAPI
+
+  # API Gateway Method
+  APIMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref WatchFaceAPI
+      ResourceId: !Ref APIResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${WatchFaceGeneratorFunction.Arn}/invocations
+
+  # API Gateway CORS Options Method
+  APIOptionsMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref WatchFaceAPI
+      ResourceId: !Ref APIResource
+      HttpMethod: OPTIONS
+      AuthorizationType: NONE
+      Integration:
+        Type: MOCK
+        IntegrationResponses:
+          - StatusCode: 200
+            ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+        RequestTemplates:
+          application/json: '{"statusCode": 200}'
+      MethodResponses:
+        - StatusCode: 200
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Methods: true
+            method.response.header.Access-Control-Allow-Origin: true
+
+  # API Gateway Deployment
+  APIDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn:
+      - APIMethod
+      - APIOptionsMethod
+    Properties:
+      RestApiId: !Ref WatchFaceAPI
+
+  # API Gateway Stage
+  APIStage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      DeploymentId: !Ref APIDeployment
+      RestApiId: !Ref WatchFaceAPI
+      StageName: !Ref StageName
+
+  # Lambda Permission for API Gateway
+  LambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref WatchFaceGeneratorFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${WatchFaceAPI}/*/*/*
+
+Outputs:
+  ApiEndpoint:
+    Description: 'API Gateway endpoint URL'
+    Value: !Sub https://${WatchFaceAPI}.execute-api.${AWS::Region}.amazonaws.com/${StageName}/generate
+  LambdaArn:
+    Description: 'Lambda Function ARN'
+    Value: !GetAtt WatchFaceGeneratorFunction.Arn
+
