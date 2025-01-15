@@ -155,6 +155,7 @@ It will show up in your browser as shown below:
 ## Use Case
 
 ## 1. Custom Watch Face Design Studios
+```
 ### Scenario
 Design studios creating custom watch faces for different smart watch brands.
 ### Implementation
@@ -169,9 +170,10 @@ styles = ["Business", "Fitness", "Medical"]
 for style in styles:
     metrics = get_style_metrics(style)
     generate_watch_face(style, metrics)
-
+```
     
 2. Healthcare Monitoring
+```
 Scenario
 Medical facilities requiring specialized watch faces for patient monitoring.
 
@@ -189,8 +191,12 @@ medical_metrics = [
     "Medication Alerts"
 ]
 generate_watch_face("Medical", medical_metrics)
+
+```
     
 3. Industrial Applications
+
+```
 Scenario
 Manufacturing plants needing watch faces for worker safety and monitoring.
 
@@ -208,8 +214,12 @@ industrial_metrics = [
     "Emergency Alerts"
 ]
 generate_watch_face("Industrial", industrial_metrics)
- 
+
+ ```
+
 4. Fitness and Sports
+
+```   
 Scenario
 Fitness centers and sports teams requiring specialized activity tracking.
 
@@ -227,8 +237,10 @@ fitness_metrics = [
     "Calories"
 ]
 generate_watch_face("Fitness", fitness_metrics)
+```
     
 5. Corporate Branding
+```
 Scenario
 Companies wanting branded watch faces for employee smart watches.
 
@@ -246,8 +258,10 @@ corporate_metrics = [
     "Goals"
 ]
 generate_watch_face("Business", corporate_metrics)
+```
     
 6. Educational Institutions
+```
 Scenario
 Schools using smart watches for student scheduling and activities.
 
@@ -265,7 +279,6 @@ education_metrics = [
     "Activities"
 ]
 generate_watch_face("Cartoon", education_metrics)
-
 ```
 
 ## Output
