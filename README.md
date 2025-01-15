@@ -169,6 +169,37 @@ It will show up in your browser as shown below:
 
 ## Use Case
 
+<div style="background-color: #f6f8fa; padding: 20px; border-radius: 6px; border: 1px solid #ccc;">
+
+### Quick Start
+1. Clone repository
+2. Install dependencies
+3. Configure AWS credentials
+4. Run application
+
+</div>
+
+<details>
+<summary>📦 Technology Stack</summary>
+
+| Frontend      | Backend       |
+|--------------|---------------|
+| Streamlit    | AWS Lambda    |
+| Python       | API Gateway   |
+| PIL          | Bedrock      |
+
+</details>
+
+> ### 🚀 Features
+> - AI-Powered Generation
+> - Multiple Styles
+> - Custom Metrics
+> - Real-time Preview
+
+<table>
+<tr>
+<td width="50%">
+  
 ## 1. Custom Watch Face Design Studios
 ```
 ### Scenario
