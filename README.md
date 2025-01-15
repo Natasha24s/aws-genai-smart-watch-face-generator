@@ -171,8 +171,6 @@ for style in styles:
     generate_watch_face(style, metrics)
 
     
-
-    
 2. Healthcare Monitoring
 Scenario
 Medical facilities requiring specialized watch faces for patient monitoring.
@@ -210,10 +208,7 @@ industrial_metrics = [
     "Emergency Alerts"
 ]
 generate_watch_face("Industrial", industrial_metrics)
-
-    
-
-    
+ 
 4. Fitness and Sports
 Scenario
 Fitness centers and sports teams requiring specialized activity tracking.
@@ -232,9 +227,6 @@ fitness_metrics = [
     "Calories"
 ]
 generate_watch_face("Fitness", fitness_metrics)
-
-    
-
     
 5. Corporate Branding
 Scenario
@@ -254,9 +246,6 @@ corporate_metrics = [
     "Goals"
 ]
 generate_watch_face("Business", corporate_metrics)
-
-    
-
     
 6. Educational Institutions
 Scenario
@@ -276,6 +265,8 @@ education_metrics = [
     "Activities"
 ]
 generate_watch_face("Cartoon", education_metrics)
+
+```
 
 ## Output
 
