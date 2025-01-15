@@ -28,30 +28,37 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ### Customizable Metrics
 #### Business Metrics
+```
 - Time and Date
 - Calendar
 - Appointments
 - Weather
 - Battery
+```
 
 #### Fitness Metrics
+```
 - Heart Rate
 - Steps
 - Calories
 - Distance
-
+```
 #### Medical Metrics
+```
 - Heart Rate
 - Blood Oxygen
 - ECG
 - Steps
+```
 
 ### User Interface Features
+```
 - Real-time preview
 - Interactive metric selection
 - Style descriptions
 - Download capabilities
 - Generated image storage
+```
 
 ## Architecture
 
@@ -77,7 +84,7 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ## AWS Services
 ```
-1. **Amazon API Gateway**
+1. Amazon API Gateway
    - RESTful API endpoints
    - Request/Response handling
    - CORS support
@@ -85,28 +92,28 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
    - Request throttling
    - API documentation
 
-2. **AWS Lambda**
+2. AWS Lambda
    - Python 3.9 runtime
    - Serverless compute
    - Event-driven architecture
    - Auto-scaling capability
    - Cost-effective execution
 
-3. **Amazon Bedrock**
+3. Amazon Bedrock
    - Stability AI integration
    - Foundation model access
    - Secure API endpoints
    - Pay-per-use pricing
    - Low-latency responses
 
-4. **AWS CloudFormation**
+4. AWS CloudFormation
    - Infrastructure as Code (IaC)
    - Stack management
    - Resource provisioning
    - Parameter management
    - Cross-stack references
 
-5. **AWS IAM**
+5. AWS IAM
    - Role-based access control
    - Security policies
    - Permission management
