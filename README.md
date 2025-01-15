@@ -116,20 +116,20 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ## Development Tools
 ```
-- **Git**: Version control
-- **GitHub**: Code repository
-- **VS Code**: Code editor
-- **AWS CLI**: AWS service management
-- **Postman**: API testing
+- Git: Version control
+- GitHub: Code repository
+- VS Code: Code editor
+- AWS CLI: AWS service management
+- Postman: API testing
 ```
 
 ## Programming Languages
 ```
-- **Python**: Backend & Frontend
-- **YAML**: CloudFormation templates
-- **JSON**: API communication
-- **CSS**: UI styling
-- **Markdown**: Documentation
+- Python: Backend & Frontend
+- YAML: CloudFormation templates
+- JSON: API communication
+- CSS: UI styling
+- Markdown: Documentation
 ```
 
 ## Deploy Configuration
