@@ -59,7 +59,7 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ## Deploy Configuration
 
-1. Download the ![watch.yaml](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/watch.yaml) file.
+1. Download the [watch.yaml](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/watch.yaml) file.
 2. Open AWS and select a region of your choice.
 3. Open Cloudformation and click on Create Stack and select the downloaded template.
 4. It will deploy the following resources:
