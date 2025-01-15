@@ -115,7 +115,7 @@ Resources:
                   style_params = get_stability_params(style)
                   
                   response = bedrock.invoke_model(
-                      modelId='stability.stable-diffusion-xl',
+                      modelId='stability.stable-diffusion-xl-v1',
                       body=json.dumps({
                           "text_prompts": [{"text": prompt}],
                           "cfg_scale": style_params["cfg_scale"],
