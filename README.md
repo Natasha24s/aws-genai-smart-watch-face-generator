@@ -172,19 +172,19 @@ It will show up in your browser as shown below:
 <div style="background-color: #f6f8fa; padding: 20px; border-radius: 6px; border: 1px solid #ccc;">
 
 ### Quick Start
-1. Clone repository
-2. Install dependencies
-3. Configure AWS credentials
-4. Run application
+The below table summarizes a variety of industry where this feature can be used to build a watch face prototype.
 
 </div>
 
 <details>
 <summary>📦 Technology Stack</summary>
 
-| Frontend      | Backend       |
+| Frontend      | Scenario       |Implementation|
 |--------------|---------------|
-| Streamlit    | AWS Lambda    |
+| 1. Custom Watch Face Design Studios   | Design studios creating custom watch faces for different smart watch brands.    |Health metric prioritization
+Emergency alert displays
+Medical data integration
+Compliance with health standards|
 | Python       | API Gateway   |
 | PIL          | Bedrock      |
 
