@@ -1,41 +1,60 @@
 
-# AI Watch Face Generator
+# AWS GenAI Smart Watch Face Generator
 
-An AI-powered watch face generator that creates custom watch faces using Stable Diffusion through Amazon Bedrock.
+A comprehensive solution for generating smart watch faces using AWS Generative AI services. This project combines Streamlit for the frontend with AWS services (Lambda, API Gateway, and Amazon Bedrock) to create customized watch faces through AI generation.
 
+![Project Banner - Add your project banner image here]
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [AWS Infrastructure](#aws-infrastructure)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
-- Multiple watch face styles:
-  - Business
-  - Fitness
-  - Industrial
-  - Medical
-  - Cartoon
-  - Sky
-- Customizable metrics display
+### Watch Face Styles
+- **Business**: Minimal and elegant design for professionals
+- **Fitness**: Dynamic layout focused on activity tracking
+- **Industrial**: Robust interface with sensor displays
+- **Medical**: Health monitoring focused interface
+- **Cartoon**: Playful animated designs
+- **Sky**: Nature-inspired weather themes
+
+### Customizable Metrics
+#### Business Metrics
+- Time and Date
+- Calendar
+- Appointments
+- Weather
+- Battery
+
+#### Fitness Metrics
+- Heart Rate
+- Steps
+- Calories
+- Distance
+
+#### Medical Metrics
+- Heart Rate
+- Blood Oxygen
+- ECG
+- Steps
+
+### User Interface Features
 - Real-time preview
-- Image download functionality
-- Automatic image saving
+- Interactive metric selection
+- Style descriptions
+- Download capabilities
+- Generated image storage
 
 ## Architecture
-
-This project uses:
-- Frontend: Streamlit
-- Backend: AWS Lambda
-- API: Amazon API Gateway
-- AI Model: Stability AI through Amazon Bedrock
-
-```mermaid
-graph LR
-    A[Streamlit Frontend] --> B[API Gateway]
-    B --> C[Lambda]
-    C --> D[Amazon Bedrock]
-    D --> C
-    C --> B
-    B --> A
-
-
-## Demo
-
-![Watch Face Generator Demo](docs/images/screenshot1.png)
