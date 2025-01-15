@@ -11,8 +11,8 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 - [Features](#features)
 - [Architecture](#architecture)
 - [Technologies Used](#technologies-used)
-- [Streamlit Integration](#streamlit-installation)
 - [Deploy Configuration](#deploy-configuration)
+- [Streamlit Integration](#streamlit-installation)
 - [Use Case](#use-case)
 - [Output](#output)
 
@@ -57,6 +57,16 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ## Technologies Used
 
+## Deploy Configuration
+
+1. Download the watch.yaml file.
+2. Open AWS and select a region of your choice.
+3. Open Cloudformation and click on Create Stack and select the downloaded template.
+4. It will deploy the following resources:
+     - API Gateway
+     - Lambda Function
+     - IAM Roles and Policies
+
 ## Streamlit Integration
 
 1. Download the zip files from `https://github.com/Natasha24s/streamlit.git`
@@ -75,9 +85,19 @@ It will show up in your browser as shown below:
 ![](https://github.com/Natasha24s/streamlit/blob/main/images/UI.png)
 
 
-
 ## Use Case
 
 ## Output
 
+Output for Cartoon Watch Face Style:
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/cartoon.png)
+
+Output for Business Watch Face Style:
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/business.png)
+
+Output for Fitness Watch Face Style:
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/fitness.png)
+
+Output for Run Watch Face Style:
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/sky.png)
 
