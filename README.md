@@ -57,7 +57,9 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ## Technologies Used
 
-## Frontend Technologies
+### Frontend Technologies
+
+```
 - **Streamlit (v1.31.0+)**
   - Python-based web framework
   - Interactive UI components
@@ -71,8 +73,10 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
   - `base64`: Image encoding/decoding
   - `io`: Binary I/O handling
   - `datetime`: Timestamp management
+```
 
 ## AWS Services
+```
 1. **Amazon API Gateway**
    - RESTful API endpoints
    - Request/Response handling
@@ -108,21 +112,25 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
    - Permission management
    - Resource-level security
    - Least privilege principle
+```
 
 ## Development Tools
+```
 - **Git**: Version control
 - **GitHub**: Code repository
 - **VS Code**: Code editor
 - **AWS CLI**: AWS service management
 - **Postman**: API testing
+```
 
 ## Programming Languages
+```
 - **Python**: Backend & Frontend
 - **YAML**: CloudFormation templates
 - **JSON**: API communication
 - **CSS**: UI styling
 - **Markdown**: Documentation
-
+```
 
 ## Deploy Configuration
 
@@ -172,7 +180,7 @@ for style in styles:
     generate_watch_face(style, metrics)
 ```
     
-2. Healthcare Monitoring
+## 2. Healthcare Monitoring
 ```
 Scenario
 Medical facilities requiring specialized watch faces for patient monitoring.
@@ -194,7 +202,7 @@ generate_watch_face("Medical", medical_metrics)
 
 ```
     
-3. Industrial Applications
+## 3. Industrial Applications
 
 ```
 Scenario
@@ -217,7 +225,7 @@ generate_watch_face("Industrial", industrial_metrics)
 
  ```
 
-4. Fitness and Sports
+## 4. Fitness and Sports
 
 ```   
 Scenario
@@ -239,7 +247,7 @@ fitness_metrics = [
 generate_watch_face("Fitness", fitness_metrics)
 ```
     
-5. Corporate Branding
+## 5. Corporate Branding
 ```
 Scenario
 Companies wanting branded watch faces for employee smart watches.
@@ -260,7 +268,7 @@ corporate_metrics = [
 generate_watch_face("Business", corporate_metrics)
 ```
     
-6. Educational Institutions
+## 6. Educational Institutions
 ```
 Scenario
 Schools using smart watches for student scheduling and activities.
