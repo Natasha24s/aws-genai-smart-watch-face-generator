@@ -310,3 +310,6 @@ Output for Fitness Watch Face Style:
 Output for Run Watch Face Style:
 ![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/sky.png)
 
+Output for Industrial Watch Face Style:
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/industrial.png)
+
