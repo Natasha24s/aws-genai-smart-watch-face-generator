@@ -8,17 +8,13 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 ## Table of Contents
 
 - [Overview](#overview)
-- [Project Structure](#project-structure)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [AWS Infrastructure](#aws-infrastructure)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
+- [Streamlit Integration](#streamlit-installation)
+- [Deploy Configuration](#deploy-configuration)
+- [Use Case](#use-case)
+- [Output](#output)
 
 ## Features
 
@@ -58,3 +54,13 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 - Generated image storage
 
 ## Architecture
+
+## Technologies Used
+
+## Streamlit Integration
+
+## Use Case
+
+## Output
+
+
