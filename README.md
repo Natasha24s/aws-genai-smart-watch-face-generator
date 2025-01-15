@@ -59,6 +59,23 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ## Streamlit Integration
 
+1. Download the zip files from `https://github.com/Natasha24s/streamlit.git`
+2. Open the file in Visual code. Select the following option to install dependency.
+
+3. In the Streamlit app code, update the `app.py` file to ue your own API Gateway endpoint URL you got in your CFN deployment.
+
+![Alt text](https://github.com/Natasha24s/streamlit/blob/main/images/api.png)
+
+4. Run the app: `streamlit run src/app.py`
+
+![Alt text](https://github.com/Natasha24s/streamlit/blob/main/images/run.png)
+
+It will show up in your browser as shown below:
+
+![](https://github.com/Natasha24s/streamlit/blob/main/images/UI.png)
+
+
+
 ## Use Case
 
 ## Output
