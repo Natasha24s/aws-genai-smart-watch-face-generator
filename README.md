@@ -177,7 +177,7 @@ It will show up in your browser as shown below:
 | **3. Industrial Applications** | Manufacturing plants needing watch faces for worker safety and monitoring | • Environmental sensor displays<br>• Safety alert integration<br>• Machine status monitoring<br>• Quick response triggers | [industrial](#industrial) |
 | **4. Fitness and Sports** | Fitness centers and sports teams requiring specialized activity tracking | • Performance metrics display<br>• Workout tracking<br>• Team coordination<br>• Competition modes | [sports](#sports)|
 | **5. Corporate Branding** | Companies wanting branded watch faces for employee smart watches | • Brand color integration<br>• Logo placement<br>• Corporate event reminders<br>• Team coordination features | [corporate](#corporate)|
-| **6. Educational Institutions** | Schools using smart watches for student scheduling and activities | • Class schedule display<br>• Assignment reminders<br>• Emergency notifications<br>• Parent communication | [edu](#edu) |
+| **6. Educational Institutions** | Schools using smart watches for student scheduling and activities | • Class schedule display<br>• Assignment reminders<br>• Emergency notifications<br>• Parent communication | [kids](#kids) |
 
 ### Code
 
@@ -228,22 +228,6 @@ generate_watch_face("Industrial", industrial_metrics)
 
 </details>
 
-<details id="industrial" open>
-<summary >industrial</summary>
-
-```python
-# Example: Industrial Watch Face
-industrial_metrics = [
-    "Temperature",
-    "Humidity",
-    "Gas Levels",
-    "Emergency Alerts"
-]
-generate_watch_face("Industrial", industrial_metrics)
-```
-
-</details>
-
 <details id="sports" open>
 <summary >sports</summary>
 
@@ -259,20 +243,11 @@ generate_watch_face("Fitness", fitness_metrics)
 ```
 
 </details>
-    
 
-    
-## 5. Corporate Branding
-```
-Scenario
-Companies wanting branded watch faces for employee smart watches.
+<details id="corporate" open>
+<summary >corporate</summary>
 
-Implementation
-Brand color integration
-Logo placement
-Corporate event reminders
-Team coordination features
-    
+```python
 # Example: Corporate Watch Face
 corporate_metrics = [
     "Time",
@@ -282,18 +257,12 @@ corporate_metrics = [
 ]
 generate_watch_face("Business", corporate_metrics)
 ```
+</details>
     
-## 6. Educational Institutions
-```
-Scenario
-Schools using smart watches for student scheduling and activities.
+<details id="kids" open>
+<summary >kids</summary>
 
-Implementation
-Class schedule display
-Assignment reminders
-Emergency notifications
-Parent communication
-    
+```python
 # Example: Educational Watch Face
 education_metrics = [
     "Schedule",
@@ -303,6 +272,8 @@ education_metrics = [
 ]
 generate_watch_face("Cartoon", education_metrics)
 ```
+</details>
+    
 
 ## Output
 
