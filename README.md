@@ -27,6 +27,9 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 - **Sky**: Nature-inspired weather themes
 
 ### Customizable Metrics
+
+| Category | Business Metrics |
+| Business Metrics |  • Time and Date • Calendar • Appointments • Weather • Battery |
 #### Business Metrics
 ```
 - Time and Date
