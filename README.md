@@ -195,7 +195,7 @@ for style in styles:
 </details>
 
 <details id="healthcare" open>
-<summary >custom</summary>
+<summary >healthcare</summary>
 
 ```python
 # Example: Medical Watch Face
@@ -211,7 +211,7 @@ generate_watch_face("Medical", medical_metrics)
 </details>
 
 <details id="industrial" open>
-<summary >custom</summary>
+<summary >industrial</summary>
 
 ```python
 # Example: Industrial Watch Face
@@ -225,23 +225,13 @@ generate_watch_face("Industrial", industrial_metrics)
 ```
 
 </details>
-    
 
-    
+</details>
 
-    
-## 3. Industrial Applications
+<details id="industrial" open>
+<summary >industrial</summary>
 
-```
-Scenario
-Manufacturing plants needing watch faces for worker safety and monitoring.
-
-Implementation
-Environmental sensor displays
-Safety alert integration
-Machine status monitoring
-Quick response triggers
-
+```python
 # Example: Industrial Watch Face
 industrial_metrics = [
     "Temperature",
@@ -250,21 +240,14 @@ industrial_metrics = [
     "Emergency Alerts"
 ]
 generate_watch_face("Industrial", industrial_metrics)
+```
 
- ```
+</details>
 
-## 4. Fitness and Sports
+<details id="sports" open>
+<summary >sports</summary>
 
-```   
-Scenario
-Fitness centers and sports teams requiring specialized activity tracking.
-
-Implementation
-Performance metrics display
-Workout tracking
-Team coordination
-Competition modes
-    
+```python
 # Example: Fitness Watch Face
 fitness_metrics = [
     "Heart Rate",
@@ -274,6 +257,10 @@ fitness_metrics = [
 ]
 generate_watch_face("Fitness", fitness_metrics)
 ```
+
+</details>
+    
+
     
 ## 5. Corporate Branding
 ```
