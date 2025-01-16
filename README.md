@@ -49,7 +49,7 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ## Architecture
 
-![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/architecture.png)
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/architecture.jpg)
 
 ## Technologies Used
 
