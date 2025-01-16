@@ -28,7 +28,7 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 ### Customizable Metrics
 
-| Category | Business Metrics |
+| Watch Face Style | Metrics |
 |----------|----------|
 | Business Metrics |  • Time and Date<br>• Calendar<br>• Appointments<br>• Weather<br>• Battery<br>|
 | Fitness Metrics |  • Heart Rate<br>• Steps<br>• Calories<br>• Distance<br>|
@@ -48,6 +48,8 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 ```
 
 ## Architecture
+
+![](https://github.com/Natasha24s/aws-genai-smart-watch-face-generator/blob/main/images/architecture.png)
 
 ## Technologies Used
 
