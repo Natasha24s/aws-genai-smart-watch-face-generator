@@ -30,7 +30,7 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 
 | Category | Business Metrics |
 |----------|----------|
-| Business Metrics |  • Time and Date • Calendar • Appointments • Weather • Battery |
+| Business Metrics |  • Time and Date<br>• Calendar<br>• Appointments<br>• Weather<br>• Battery<br>|
 #### Business Metrics
 ```
 - Time and Date
