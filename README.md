@@ -31,29 +31,10 @@ A comprehensive solution for generating smart watch faces using AWS Generative A
 | Category | Business Metrics |
 |----------|----------|
 | Business Metrics |  • Time and Date<br>• Calendar<br>• Appointments<br>• Weather<br>• Battery<br>|
-#### Business Metrics
-```
-- Time and Date
-- Calendar
-- Appointments
-- Weather
-- Battery
-```
+| Fitness Metrics |  • Heart Rate<br>• Steps<br>• Calories<br>• Distance<br>|
+| Industrial Metrics | • Time<br>• Date<br>• Tempreature<br>• Humidity<br>• Pressure<br>• Battery<br>|
+| Medical Metrics | • Heart Rate<br>• Date<br>• Blood Oxygen<br>• ECG<br>• Steps<br>|
 
-#### Fitness Metrics
-```
-- Heart Rate
-- Steps
-- Calories
-- Distance
-```
-#### Medical Metrics
-```
-- Heart Rate
-- Blood Oxygen
-- ECG
-- Steps
-```
 
 ### User Interface Features
 ```
