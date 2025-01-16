@@ -3,8 +3,6 @@
 
 A comprehensive solution for generating smart watch faces using AWS Generative AI services. This project combines Streamlit for the frontend with AWS services (Lambda, API Gateway, and Amazon Bedrock) to create customized watch faces through AI generation.
 
-![Project Banner - Add your project banner image here]
-
 ## Table of Contents
 
 - [Overview](#overview)
